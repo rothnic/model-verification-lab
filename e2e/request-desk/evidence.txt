@@ -1,0 +1,14 @@
+Local end-to-end run: Node 24.22.3, Playwright Core 1.58.2,
+Chromium Headless Shell 143.0.7499.0 (@sparticuz/chromium 143.0.4),
+Bend 2.0.40, OpenSysML PR #2504 tree 4338ececdb907d906220ee0abca0db086f0956bc
+(upstream PR commit d2dcdf9688d14179a02856857fb90a890ddbcc49).
+
+Bend ordinary checker: ALL PROOFS CHECK (not Lean-backed --verdict).
+Compiled Bend engine: early response denied; submit, retry, respond passed.
+Browser recording, normal:    idle, idle, pending,   pending, responded
+Browser recording, early UI: idle, idle, responded, pending, responded
+OpenSysML normal: matched at row 5 (exit 0).
+OpenSysML early UI: no_match at row 3 (exit 1).
+Both browser recordings end in responded. Runner exit 0.
+
+The checked-in JSONL files are the observed browser recordings.

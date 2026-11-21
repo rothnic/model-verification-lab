@@ -1,0 +1,5 @@
+{"observe":{"phase":"idle"}}
+{"signal":"RequestDesk::Respond","observe":{"phase":"idle"}}
+{"signal":"RequestDesk::Submit","observe":{"phase":"responded"}}
+{"signal":"RequestDesk::Retry","observe":{"phase":"pending"}}
+{"signal":"RequestDesk::Respond","observe":{"phase":"responded"}}

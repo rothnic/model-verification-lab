@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Request Desk</title>
+<h1>Request Desk</h1>
+<p role="status">idle</p>
+<p role="alert"></p>
+<div id="commands" data-completed="0">
+  <button type="button" data-command="submit">Submit</button>
+  <button type="button" data-command="retry">Retry</button>
+  <button type="button" data-command="respond">Respond</button>
+</div>
+<script type="module">
+  const controls = document.querySelector('#commands');
+  const buttons = controls.querySelectorAll('button');
+  const status = document.querySelector('[role=status]');
+  const alert = document.querySelector('[role=alert]');
+  for (const button of buttons) {
+    button.addEventListener('click', async () => {
+      buttons.forEach(button => { button.disabled = true; });
+      try {
+        const response = await fetch('/commands/' + button.dataset.command, { method: 'POST' });
+        if (!response.ok) throw new Error('Command failed');
+        const result = await response.json();
+        status.textContent = result.misrender ? 'responded' : result.phase;
+        controls.dataset.completed = String(Number(controls.dataset.completed) + 1);
+      } catch (error) {
+        alert.textContent = error.message;
+      } finally {
+        buttons.forEach(button => { button.disabled = false; });
+      }
+    });
+  }
+</script>
+</html>

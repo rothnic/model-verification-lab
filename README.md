@@ -23,6 +23,8 @@ These aren't three specifications I'd maintain for one product. I want one model
 
 ## From the model to a real test
 
+The [request desk example](e2e/request-desk/) runs the full path locally: Playwright clicks through a real browser, a Node server calls compiled Bend 2 code, and OpenSysML checks the recorded screen states. A one-line display defect changes the middle of the journey, not the final screen.
+
 A model check tells you what is possible in the model, not which behaviors your implementation actually has. A test can send real inputs and record the resulting outputs. The trace checker then asks whether one allowed model run explains that recording.
 
 A reusable runner can handle recording, formatting, and reporting. A small Playwright or API adapter should only know how to apply an input, tell when the implementation has settled, and read the actual result. The adapter shouldn't copy the model's expected answers. That way a rewrite can keep the same journey and expectations while changing only the bindings that need to change.
