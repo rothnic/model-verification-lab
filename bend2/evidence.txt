@@ -1,0 +1,16 @@
+bend 2.0.40; proof mode: --check-only
+safe execution: [Idle{}, Responded{}]
+ALL PROOFS CHECK
+Use --verdict for mathematical validity.
+mutant execution: [Responded{}, Responded{}]
+SOME PROOFS FAIL
+Error:
+- expected : True{}
+- observed : False{}
+Location: Laws.no_response_from_idle
+11 |     case Machine.Respond{}:
+12>|       {==}
+   |       ^^^^
+13 | 
+Note: the left side of the equality is the expected, the right side is the observed.
+mutant proof rejected as expected (exit 1)

@@ -1,0 +1,4 @@
+# Local tool downloads and generated outputs
+tla2tools.jar
+states/
+*.out

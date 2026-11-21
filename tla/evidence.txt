@@ -1,0 +1,9 @@
+Official tlaplus v1.8.0 release asset, SHA-256 fdffef247f563ef6edbfd44958d2a82db79e7564e07cb673262d896353fa6713
+TLC2 Version 2026.11.19.180144 (rev: bc1b506); OpenJDK 21.0.13
+fair: TLC exit 0; Model checking completed. No error has been found.
+unfair: TLC exit 13; Error: Temporal property PendingEventuallyResponds was violated.
+mutant: TLC exit 12; Error: Invariant RespondedOnlyAfterAccept is violated.
+trace-good: TLC exit 0; Model checking completed. No error has been found.
+trace-bad: TLC exit 12; Error: Invariant TraceSupported is violated by the initial state:
+Fair search: 6 generated, 5 distinct, 0 left; graph depth 4.
+Safety mutation counterexample: idle/accepted=FALSE -> responded/accepted=FALSE.
